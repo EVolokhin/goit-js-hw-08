@@ -1,10 +1,10 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
 
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
 
 const pictures = galleryItems
   .map(
@@ -19,19 +19,11 @@ const pictures = galleryItems
   </a>
 </div>`
   )
-  .join("");
+  .join('');
 
-gallery.insertAdjacentHTML("afterbegin", pictures);
+gallery.insertAdjacentHTML('afterbegin', pictures);
 
-gallery.addEventListener("click", openPicture);
-
-var lightboxGallery = new SimpleLightbox(".gallery a", {
+ new SimpleLightbox('.gallery a', {
   enableKeyboard: true,
   captionDelay: 250,
 });
-
-function openPicture(event) {
-  event.preventDefault();
-  lightboxGallery.open();
-}
-
